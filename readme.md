@@ -1,7 +1,4 @@
-# Termbox-next
-[![CodeFactor](https://www.codefactor.io/repository/github/cylgom/termbox-next/badge)](https://www.codefactor.io/repository/github/cylgom/termbox-next)
-
-## The original Termbox
+# Termbox
 [Termbox](https://github.com/nsf/termbox)
 was a promising Text User Interface (TUI) library.
 Unfortunately, its original author
