@@ -1,6 +1,6 @@
 NAME=termbox
 CC=gcc
-FLAGS=-std=c99 -pedantic -Wall -Werror -g
+FLAGS+=-std=c99 -pedantic -Wall -Werror -g
 
 OS:=$(shell uname -s)
 ifeq ($(OS),Linux)
