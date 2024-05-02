@@ -76,14 +76,27 @@ static void send_clear(void);
 static void sigwinch_handler(int xxx);
 static int wait_fill_event(struct tb_event* event, struct timeval* timeout);
 
+static int tb_init_file_process();
+
 // may happen in a different thread
 static volatile int buffer_size_change_request;
+
+int tb_init_file_handle(int out_fd, FILE* in_file)
+{
+	out = out_fd;
+	in = in_file;
+	return tb_init_file_process();
+}
 
 int tb_init_file(const char* name)
 {
 	out = open(name, O_WRONLY);
 	in = fopen(name, "r");
+	return tb_init_file_process();
+}
 
+int tb_init_file_process()
+{
 	if (out == -1 || !in)
 	{
 		if (out != -1)

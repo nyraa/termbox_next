@@ -1,6 +1,7 @@
 #ifndef H_TERMBOX
 #define H_TERMBOX
 #include <stdint.h>
+#include <stdio.h>
 
 // shared objects
 #if __GNUC__ >= 4
@@ -169,6 +170,7 @@ struct tb_event
 // finalized using the tb_shutdown() function.
 SO_IMPORT int tb_init(void);
 SO_IMPORT int tb_init_file(const char* name);
+int tb_init_file_handle(int out_fd, FILE* in_file);
 SO_IMPORT void tb_shutdown(void);
 
 // Returns the size of the internal back buffer (which is the same as
